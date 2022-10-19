@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  grafana:
+    image: "grafana/grafana-oss:9.2.0-ubuntu"
+    # ports:
+    #   - "3000:3000"
+    network_mode: host
+    volumes:
+      - "./grafana-storage:/var/lib/grafana"
+    user: "1000"
+  prometheus:
+    image: "prom/prometheus:v2.39.0"
+    # ports:
+    #   - "9090:9090"
+    network_mode: host
+    volumes:
+      - "./prometheus.yml:/etc/prometheus/prometheus.yml"
