@@ -4,7 +4,8 @@ services:
     image: "grafana/grafana-oss:9.2.0-ubuntu"
     network_mode: host
     volumes:
-      - "./grafana-storage:/var/lib/grafana"
+      - "./grafana-volumes/grafana-storage:/var/lib/grafana"
+      - "./grafana-volumes/config/grafana.ini:/etc/grafana/grafana.ini"
     user: "1000"
   prometheus:
     image: "prom/prometheus:v2.39.0"

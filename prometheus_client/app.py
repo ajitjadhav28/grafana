@@ -1,4 +1,3 @@
-import imp
 from flask import Flask
 from prometheus_client import Counter, generate_latest, Gauge
 from random import randint
